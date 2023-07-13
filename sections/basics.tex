@@ -1,0 +1,221 @@
+\section{Nociones básicas}
+\frame{\tableofcontents[currentsection]}
+
+\subsection{Estructura del documento}
+\begin{frame}[fragile]{Estructura del documento}
+
+Lo principal que hay que declarar es el tipo de documento y el cuerpo del
+mismo:
+
+\begin{lstlisting}
+\documentclass{article}
+
+\begin{document}
+ Hello world
+\end{document}
+\end{lstlisting}
+
+\pause
+\vspace{5mm}
+Existen dos conceptos principales en \LaTeX: comandos y entornos.
+
+\end{frame}
+
+\subsection{Comandos y entornos}
+\begin{frame}[fragile]{Comandos}
+
+Un comando ejecuta una acción. La misma puede ser para establecer una
+configuración, importar algun paquete, o incluso cambiar la forma en la que se
+renderiza un texto. Los comandos están compuesto de la siguiente forma:
+
+\begin{verbatim}
+\nombre[opciones]{parámetro}
+\end{verbatim}
+
+\pause
+
+Ejemplos:\\[2mm]
+- \textbackslash\texttt{LaTeX} ~produce~ \LaTeX\\
+- \textbackslash\texttt{textbf\{foo\}} ~produce~ \textbf{foo}\\
+- \textbackslash\texttt{documentclass[a4paper]\{article\}} Declara el tipo de documento como artículo usando tamaño de hoja A4.
+
+\end{frame}
+
+\begin{frame}[fragile]{Entornos}
+
+Los entornos se usan para aplicar un formato o configuración específica a una
+parte del documento. Los entornos se estructuran de la siguiente forma:
+
+\begin{lstlisting}
+\begin{nombre}[opciones]{parametro}
+ % Contenido
+\end{nombre}
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}{Ejemplos}
+
+\begin{center}
+\begin{tabular}{lr}
+  \texttt{\textbackslash textbf\{Hello world\}} & \textbf{Hello world} \\[3mm]
+  \texttt{\textbackslash textit\{Hello world\}} & \textit{Hello world} \\[3mm]
+  \texttt{\textbackslash emph\{Hello world\}} & \emph{Hello world} \\[3mm]
+  \texttt{\textbackslash texttt\{Hello world\}} & \texttt{Hello world} \\[3mm]
+  \texttt{\textbackslash underline\{Hello world\}} & \underline{Hello world} \\[3mm]
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Ejemplos}
+
+
+\begin{center}
+\color{red}\text{\small\emph{Estos comandos afectan al entorno completo donde se
+encuentren}}\color{black}\\[5mm]
+
+\begin{tabular}{lr}
+  \texttt{\textbackslash tiny Hello world} & \tiny Hello world \\
+  \texttt{\textbackslash small Hello world} & \small Hello world \\
+  \texttt{\textbackslash Small Hello world} & \Small Hello world \\
+  \texttt{\textbackslash large Hello world} & \large Hello world \\
+  \texttt{\textbackslash Large Hello world} & \Large Hello world \\
+  \texttt{\textbackslash huge Hello world} & \huge Hello world \\
+  \texttt{\textbackslash Huge Hello world} & \Huge Hello world \\
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+\subsection{Ecuaciones y tablas}
+\begin{frame}[fragile]{Ecuaciones}
+Existen 2 formas principales de declarar expresiones matemáticas:
+\begin{itemize}
+  \item Utilizando el caracter \$\\
+    Ejemplo: \texttt{\$x=\textbackslash sqrt\{3\}\$} ~produce~ $x=\sqrt{3}$\\[1mm]
+    \text{\small \emph{Se usa para agregar expresiones dentro de un texto}}
+  \item Utilizando entornos matemáticos\\
+    Ejemplo:
+    \begin{lstlisting}
+    \begin{equation}
+    f(x) = \sqrt{\frac{\pi}{x}}
+    \end{equation}
+    \end{lstlisting}
+    produce:
+    \begin{equation}
+    f(x) = \sqrt{\frac{\pi}{x}}
+    \end{equation}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Tablas}
+
+Las tablas se escriben usando el entorno \texttt{tabular}. Analicemos el
+siguiente ejemplo:
+
+\begin{lstlisting}
+\begin{center}
+\begin{tabular}{l|ccr}
+  Nombre & Edad & Sexo & Provincia \\
+  \hline
+  Juan & 26 & M & Cienfuegos\\
+  Ana & 25 & F & La Habana\\
+\end{tabular}
+\end{center}
+\end{lstlisting}
+
+Esto produce la siguiente tabla:
+
+\begin{center}
+\begin{tabular}{l|ccr}
+  Nombre & Edad & Sexo & Provincia \\
+  \hline
+  Juan & 26 & M & Cienfuegos\\
+  Ana & 25 & F & La Habana\\
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+\begin{frame}[fragile]{Tablas}
+
+\begin{lstlisting}
+\begin{center}
+\begin{tabular}{l|ccr}
+  Nombre & Edad & Sexo & Provincia \\
+  \hline
+  Juan & 26 & M & Cienfuegos\\
+  Ana & 25 & F & La Habana\\
+\end{tabular}
+\end{center}
+\end{lstlisting}
+
+\only<1>{
+El entorno \texttt{tabular} recibe como parámetro la configuración de las
+columnas. En este caso (\texttt{l$|$ccr}) es: una columna alineada la izquierda
+(\texttt{l}), una división ($|$), dos columnas centradas (\texttt{cc}) y una
+columna alineada a la derecha (\texttt{r}).
+}
+\only<2>{
+Las filas se escriben en el cuerpo del entorno, separando cada columna entre \&
+y cada fila entre \textbackslash\textbackslash. Además se pueden utilizar comandos para
+agregar sepradores, unir celdas, etc.
+}
+
+\end{frame}
+
+\begin{frame}{Tablas}
+Las tablas se pueden customizar tanto como se quiera:
+
+\begin{center}
+\scalebox{.45}{
+\begin{tabular}{ccccccccccccc}
+    \toprule
+    \multicolumn{2}{c}{\multirow{2}[4]{*}{}} &
+    \multicolumn{10}{c}{\bf Actual} &
+    \multirow{2}[4]{*}{\bf Precision} \\
+    & \cline{2-11}
+    & & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & \\
+    \midrule
+    \multirow{10}{*}{\bf Predicted}
+        & 0 & \textbf{75.71 \%} & 0.0 \% & 1.26 \% & 0.79 \% & 1.32 \% & 3.36 \% & 5.64 \% & 0.1 \% & 18.07 \% & 1.39 \% & 70.6 \% \\
+        & 1 & 0.0 \% & \textbf{97.71 \%} & 0.1 \% & 0.3 \% & 0.2 \% & 0.34 \% & 0.52 \% & 1.56 \% & 0.1 \% & 0.2 \% & 97.11 \% \\
+        & 2 & 0.31 \% & 0.0 \% & \textbf{53.0 \%} & 6.73 \% & 4.18 \% & 1.68 \% & 3.34 \% & 3.31 \% & 4.21 \% & 0.2 \% & 69.86 \% \\
+        & 3 & 0.2 \% & 0.18 \% & 8.24 \% & \textbf{59.7 \%} & 8.55 \% & 2.24 \% & 5.22 \% & 3.79 \% & 4.93 \% & 0.4 \% & 64.35 \% \\
+        & 4 & 3.47 \% & 0.44 \% & 10.37 \% & 14.85 \% & \textbf{63.03 \%} & 6.84 \% & 10.33 \% & 6.71 \% & 3.18 \% & 1.68 \% & 51.93 \% \\
+        & 5 & 3.37 \% & 0.26 \% & 1.36 \% & 1.29 \% & 2.14 \% & \textbf{72.09 \%} & 5.53 \% & 2.33 \% & 5.65 \% & 18.73 \% & 61.35 \% \\
+        & 6 & 9.29 \% & 0.0 \% & 3.1 \% & 3.86 \% & 9.88 \% & 5.61 \% & \textbf{55.64 \%} & 1.17 \% & 3.29 \% & 1.98 \% & 58.83 \% \\
+        & 7 & 0.0 \% & 1.41 \% & 13.86 \% & 9.5 \% & 6.72 \% & 2.8 \% & 7.93 \% & \textbf{79.18 \%} & 0.62 \% & 5.05 \% & 62.95 \% \\
+        & 8 & 7.04 \% & 0.0 \% & 6.2 \% & 2.67 \% & 0.81 \% & 2.35 \% & 4.49 \% & 0.1 \% & \textbf{56.67 \%} & 1.59 \% & 68.91 \% \\
+        & 9 & 0.61 \% & 0.0 \% & 2.52 \% & 0.3 \% & 3.16 \% & 2.69 \% & 1.36 \% & 1.75 \% & 3.29 \% & \textbf{68.78 \%} & 81.94 \% \\
+        \midrule
+    \multicolumn{2}{c}{\bf Recall} & 75.71 \% & 97.71 \% & 53.0 \% & 59.7 \% & 63.03 \% & 72.09 \% & 55.64 \% & 79.18 \% & 56.67 \% & 68.78 \% \\
+    \bottomrule
+\end{tabular}
+}
+\end{center}
+
+
+\end{frame}
+
+\subsection{Imágenes}
+\begin{frame}[fragile]{Imágenes}
+
+Mostrar una imagen se puede lograr usando el paquete \texttt{graphicx}. Por ejemplo:
+
+\begin{lstlisting}
+\usepackage{graphicx} % fuera del entorno `document`
+...
+\begin{center}
+\includegraphics[width=3cm]{matcom.jpg}
+\end{center}
+\end{lstlisting}
+
+...produce:
+
+\begin{center}
+\includegraphics[width=3cm]{matcom.jpg}
+\end{center}
+
+\end{frame}

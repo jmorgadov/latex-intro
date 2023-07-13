@@ -1,0 +1,77 @@
+\section{Estructurar un documento}
+\frame{\tableofcontents[currentsection]}
+
+\subsection{Estilo}
+\begin{frame}[fragile]{Estilo}
+La clase del documento (\texttt{documentclass}) define el estilo del
+mismo y además varios comandos. En el primer ejemplo se mostró la clase
+\texttt{article}, sin embargo existen muchas otras: \texttt{proc},
+\texttt{book}, \texttt{report}, \texttt{letter}, etc.
+\end{frame}
+
+\subsection{Presentación}
+\begin{frame}[fragile]{Presentación}
+
+Una página de presentación se puede estrucuturar manualmente:
+
+\begin{center}
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+\begin{lstlisting}[basicstyle=\tiny]
+\begin{center}
+  \text{\Large My project title}\\
+  \text{\small John Doe}\\
+  \vspace{0.5cm}
+  \text{\tiny Jul 14th, 2023}\\
+\end{center}
+\end{lstlisting}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\begin{center}
+  \text{\Large My project title}\\
+  \text{\small John Doe}\\
+  \vspace{0.5cm}
+  \text{\tiny Jul 14th, 2023}\\
+\end{center}
+\end{column}
+
+\end{columns}
+\end{center}
+
+\pause
+
+Sin embargo, la gran mayoria de las clases que tiene \LaTeX por defecto
+brindan comandos para estructurar de manera sencilla la presentación de un
+documento:
+
+\begin{lstlisting}[basicstyle=\tiny]
+\title{My project title}
+\author{John Doe}
+\date{Jul 14th, 2023}
+\maketitle
+\end{lstlisting}
+
+\end{frame}
+
+\subsection{Secciones, subsecciones y más...}
+\begin{frame}[fragile]{Secciones, subsecciones, y más...}
+Específicamente en la clase \texttt{article} se pueden definir secciones,
+subsecciones y subsubsecciones. Existen varias ventaja que trae organizar el
+documento usando estos comandos: enumeración automática, generación de tablas
+de contenido de forma automática, son fáciles de referenciar a lo largo del
+documeto, etc.
+
+\begin{lstlisting}[basicstyle=\tiny]
+\section{Introduction}
+...
+\section{Main topic}
+...
+\subsection{A sub-topic}
+...
+\section{Other topic}
+...
+\end{lstlisting}
+
+\end{frame}

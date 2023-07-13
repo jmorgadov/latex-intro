@@ -1,0 +1,39 @@
+\documentclass{beamer}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{makecell}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\usepackage{beamerthemesplit}
+\usetheme{Warsaw}
+
+\lstdefinestyle{latexStyle}{
+    language=[LaTeX]{TeX},
+    belowcaptionskip=1\baselineskip,
+    breaklines=true,
+    frame=none,
+    numbers=none, 
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{green!40!black},
+    commentstyle=\itshape\color{purple!40!black},
+    identifierstyle=\color{blue},
+    backgroundcolor=\color{gray!10!white},
+}
+\lstset{style=latexStyle}
+
+
+\title{Introducción a \LaTeX}
+\author{Jorge Morgado Vega}
+\date{Julio, 2023}
+
+\begin{document}
+\maketitle
+
+\include{sections/intro}
+\include{sections/basics}
+\include{sections/structure}
+
+\end{document}
