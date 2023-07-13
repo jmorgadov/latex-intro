@@ -1,0 +1,166 @@
+\documentclass[a4paper,12pt]{article}
+% En dependencia de como instalaron latex (básico, extra, full), puede que para
+% usar ciertos paquetes sea necesario instalarlos adicionalmente. Para ellos
+% buscan en internet qué deben instalar (de acuerdo a su sistema operativo)
+% para usar cada paquete en específico.
+
+% Modificar las propiedades de la hoja.
+\usepackage[left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+
+% Paquetes para el rednerizado de estructuras matemáticas, teoremas, símbolos, etc.
+% AMS es una familia de paqueted
+\usepackage{amsmath, amsthm, amssymb}
+
+% Usar plantilla en español. Puede ser que tengan que instalar
+% el paquete del lenguaje español. Para ellos busquen en internet
+% cómo instalarlo de acuerdo a su sistema operativo.
+% 
+% En linux:
+%   - Ubuntu: apt install texlive-lang-spanish
+%   - Arch: pacman -S texlive-langspanish
+\usepackage[spanish]{babel}
+
+% Para agregar citas bibliográficas
+\usepackage{cite}
+
+% Para insertar imágenes
+\usepackage{graphicx}
+
+% Para agregar links
+\usepackage{url}
+
+% Estilo de la bibliografía
+\bibliographystyle{plain} % Otros estilos: apalike, alpha, abbrv, etc
+
+\begin{document}
+\title{Documento de ejemplo para el uso de \LaTeX}
+\author{Jorge Morgado Vega}
+\date{Julio, 2023}
+\maketitle
+
+% La clase 'article' permite declarar un abstract (resumen)
+\begin{abstract}
+    El abstract de un artículo es un párrafo de aproximadamente 250 palabras que
+    resume la escencia del artículo. El mismo puede contener una pequeña
+    introducción al tema, lo que se realizó en el trabajo y los resultados
+    principales obtenidos.
+\end{abstract}
+
+\section{Introducción}\label{sec:intro}
+
+La introducción debe escribirse desde lo más general a lo más específico.  Se
+comienza hablando del tema o el campo donde se aplica el estudio realizado, así
+como la importancia de este tipo de estudios. Se deben citar además estudios
+realizados anteriormente \cite{hu2016entangled} que tienen relación con su
+trabajo. Luego se explica el motivo de realización del trabajo.
+
+Al final de la introducción se puede escribir de forma opcional un párrafo que
+explique como está estructurado el documento. Por ejemplo;
+
+La Sección \ref{sec:ent} presenta varios de los entornos más comunmente usados.
+En la Sección \ref{sec:math} se explican las diferentes formas de escribir
+expresiones matemáticas. La Sección \ref{sec:img-and-tables} muestra cómo se
+pueden insertar Imágenes y tablas al documento.
+
+\section{Entornos comunes}\label{sec:ent}
+
+\subsection{Entorno \texttt{center}}\label{sub:center}
+
+Se utiliza para centrar el texto:
+
+\begin{center}
+    Texto centrado
+\end{center}
+
+\subsection{Entorno \texttt{itemize}}\label{sub:itemize}
+
+Se usa para nombrar elementos que no tienen un orden significativo:
+
+\begin{itemize}
+    \item Un elemento
+    \item Otro elemento
+    \begin{itemize}
+        \item Un sub elemento
+        \item Otro sub elemento
+    \end{itemize}
+    \item[-] Un elemento con otro símbolo
+    \item Otro elemento con el símbolo original
+\end{itemize}
+
+\subsection{Entorno \texttt{enumerate}}\label{sub:enumerate}
+
+Se usa para nombrar elementos que tienen un orden:
+
+\begin{enumerate}
+    \item Primer elemento
+    \item segundo elemento
+    \begin{enumerate}
+        \item Un sub elemento
+        \item Otro sub elemento
+    \end{enumerate}
+    \item Último elemento
+\end{enumerate}
+
+\section{Expresiones matemáticas}\label{sec:math}
+
+Existen diversos comandos y entornos que permiten escrbir todo tipo de
+expresioens matemáticas.
+
+El más simple es mediante el uso del caracter \$. Este se emplea cuando se
+quiere insertar una expresión dentro de un texto. Por ejemplo, si $A \subseteq
+B$ y $B \subseteq C$ entonces se puede decir que $A \subseteq C$.
+
+Si se usa el caracter \$ doble entonces al renderiza la expresión se hara un
+salto de línea en ambos extremos y se mostrará centrada. Por ejemplo, si $$x \ge
+y \wedge y \ge z$$ entonces $x \ge z$.
+
+\subsection{Ecuaciones}\label{sub:eq}
+
+Las ecuaciones tmb pueden ser enumeradas y referenciadas mediante el uso del
+entorno \texttt{equation}:
+
+\begin{equation}\label{eq:grav}
+    F = G\frac{m_1m_2}{r^2}
+\end{equation}
+
+La fórmula \ref{eq:grav} ilustra la fuerza de gravedad que existe entre un
+cuerpo de masa $m_1$ y un cuerpo de masa $m_2$ que se encuentran separados por
+una distancia $r$.
+
+Para una guía de todo lo que se puede realizar con respecto a estructuras
+matemáticas pueden referise al manual de \texttt{amsmath}\footnote{Disponible
+en: \url{http://www.ams.org/arc/tex/amsmath/amsldoc.pdf}}
+
+\section{Imágenes}\label{sec:img-and-tables}
+
+Como se mostró en la presentación, se pueden usar el entorno \texttt{figure}
+junto con el comando \texttt{includegraphics} para agregar imágenes al
+documento.  La opción \texttt{[h]} del entrno \texttt{figure} indica a latex que
+inserte la figura en la misma posición en la que se declaró en el documento
+\texttt{.tex}.
+
+\begin{figure}[h]
+    \center
+    \includegraphics[width=3cm]{matcom.jpg}
+    \caption{Logo de la facultad}
+    \label{fig:logo}
+\end{figure}
+
+\section{Conclusiones}\label{sec:concl}
+
+A medida que empiecen a usar \LaTeX{} para escribir sus documentos van a empezar a
+tener muchas dudas, en esos casos internet será su mejor amigo. Pueden contar
+además con la ayuda de sus profesores.
+
+% Empezar una nueva página.
+\newpage
+
+% El índice se puede generar de forma automática. El siguiente comando analiza
+% la estructura del documento (secciones, subsecciones, etc) y genera la tabla
+% de contenidos. (No tiene que ir al final del documento obligatoriamente, puede
+% estar al inicio también)
+\tableofcontents
+
+\newpage
+\bibliography{bibliography}
+\end{document}
