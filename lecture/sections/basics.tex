@@ -1,5 +1,15 @@
 \section{Nociones básicas}
-\frame{\tableofcontents[currentsection]}
+
+\begin{frame}
+    \begin{columns}[t]
+        \begin{column}{.5\textwidth}
+          \tableofcontents[sections={1-2},currentsection]
+        \end{column}
+        \begin{column}{.5\textwidth}
+          \tableofcontents[sections={3-4},currentsection]
+        \end{column}
+    \end{columns}
+\end{frame}
 
 \subsection{Estructura del documento}
 \begin{frame}[fragile]{Estructura del documento}
@@ -69,8 +79,6 @@ parte del documento. Los entornos se estructuran de la siguiente forma:
 \end{frame}
 
 \begin{frame}{Ejemplos}
-
-
 \begin{center}
 \color{red}\text{\small\emph{Estos comandos afectan al entorno completo donde se
 encuentren}}\color{black}\\[5mm]
@@ -78,14 +86,12 @@ encuentren}}\color{black}\\[5mm]
 \begin{tabular}{lr}
   \texttt{\textbackslash tiny Hello world} & \tiny Hello world \\
   \texttt{\textbackslash small Hello world} & \small Hello world \\
-  \texttt{\textbackslash Small Hello world} & \Small Hello world \\
   \texttt{\textbackslash large Hello world} & \large Hello world \\
   \texttt{\textbackslash Large Hello world} & \Large Hello world \\
   \texttt{\textbackslash huge Hello world} & \huge Hello world \\
-  \texttt{\textbackslash Huge Hello world} & \Huge Hello world \\
+  \texttt{\textbackslash Huge Hello world} & \Huge Hello world
 \end{tabular}
 \end{center}
-
 \end{frame}
 
 \subsection{Ecuaciones y tablas}

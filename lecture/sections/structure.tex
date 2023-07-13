@@ -1,5 +1,15 @@
 \section{Estructurar un documento}
-\frame{\tableofcontents[currentsection]}
+
+\begin{frame}
+    \begin{columns}[t]
+        \begin{column}{.5\textwidth}
+          \tableofcontents[sections={1-2},currentsection]
+        \end{column}
+        \begin{column}{.5\textwidth}
+          \tableofcontents[sections={3-4},currentsection]
+        \end{column}
+    \end{columns}
+\end{frame}
 
 \subsection{Estilo}
 \begin{frame}[fragile]{Estilo}

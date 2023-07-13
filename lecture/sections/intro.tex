@@ -1,6 +1,15 @@
 \section{Introducción}\label{intro}
 
-\frame{\tableofcontents[currentsection]}
+\begin{frame}
+    \begin{columns}[t]
+        \begin{column}{.5\textwidth}
+          \tableofcontents[sections={1-2},currentsection]
+        \end{column}
+        \begin{column}{.5\textwidth}
+          \tableofcontents[sections={3-4},currentsection]
+        \end{column}
+    \end{columns}
+\end{frame}
 
 \subsection{¿Qué es \LaTeX?}
 
@@ -25,7 +34,8 @@ Ventajas:
   \item Es gratis
   \item Produce documentos de alta calidad
   \item Fácil control de versiones
-  \item Diseñado específicamente para renderizar mejor ecuaciones, figuras, tablas etc
+  \item Diseñado específicamente para renderizar de una mejor forma ecuaciones,
+    figuras, tablas etc
   \item Independiende de plataforma
 \end{itemize}
 

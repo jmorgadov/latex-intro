@@ -1,0 +1,125 @@
+\section{Nociones intermedias}
+\begin{frame}
+    \begin{columns}[t]
+        \begin{column}{.5\textwidth}
+          \tableofcontents[sections={1-2},currentsection]
+        \end{column}
+        \begin{column}{.5\textwidth}
+          \tableofcontents[sections={3-4},currentsection]
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Etiquetas}
+\begin{frame}[fragile]{Etiquetas}
+Las etiquetas permiten nombrar estructuras en \LaTeX para luego porder hacer
+referencias a ellas. Por ejemplo:
+
+\begin{lstlisting}[basicstyle=\tiny]
+\section{Main topic}\label{sec:main}
+...
+
+\section{Secondary topic}\label{sec:secondary}
+
+As mentioned in Section \ref{sec:main}, the principal ...
+\end{lstlisting}
+
+El comando \texttt{ref} se renderizará en el documento como el número de la
+sección que pasaron como parámetro. De esta forma pueden cambiar las secciones
+de orden, o agregar nuevas secciones sin preocupación de cambiar el número en
+todos los lugares donde hagan referencia a las mismas.
+
+\end{frame}
+
+\subsection{Figuras}
+\begin{frame}[fragile]{Figuras}
+¿Y si queremos hacer referencia a una imágen? Para ello se usa el entorno
+\texttt{figure}. Dentro de este entorno no solo podemos agregar una etiqueta,
+sino también agregar un pie de figura:
+
+\begin{lstlisting}
+\begin{figure}
+\label{fig:matcom}
+\includegraphics[width=0.8\linewidth]{matcom.jpg}
+\caption{Logo de Matcom}
+\end{figure}
+\end{lstlisting}
+
+\vspace{4mm}
+\pause
+
+\emph{De la misma forma el entrono \texttt{table} servirá para caracterizar tablas.}
+
+\end{frame}
+
+\subsection{Bibliografía}
+\begin{frame}[fragile]{Bibliografía}
+Existen muchas formas de agregar la bibliografía a un documento. Una de las más
+comunes es usando \emph{BibTeX}.\\[2mm]
+
+\pause
+
+Para ellos es necesario crear un archivo \texttt{.bib} el cual va a contener la
+información de las citas que van a hacer en su trabajo:
+
+\begin{lstlisting}[basicstyle=\tiny]
+@article{hu2016entangled,
+  title={Entangled active matter: From cells to ants},
+  author={Hu, DL and Phonekeo, S and Altshuler, E and Brochard-Wyart, F},
+  journal={The European Physical Journal Special Topics},
+  volume={225},
+  number={4},
+  pages={629--649},
+  year={2016},
+  publisher={Springer}
+}
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}{¿Cómo escribo el archivo \texttt{.bib}?}
+
+Muchos citios en internet permiten obtener la cita con el formato de
+BibTeX. Sin embargo, siempre pueden ir a Google Scholar y buscar el artículo
+(libro, etc) que van a usar como bibliografía. Cada resultado en Google
+Scholar tiene abajo la opción \texttt{Cite} y dentro de ella pueden obtener
+la cita en formato BibTex.\\[3mm]
+
+Si aún así no encuentran la cita, pueden buscar los diferentes tipos de citas
+que se pueden usar en BibTeX y escribirla manualmente.
+
+\end{frame}
+
+\begin{frame}[fragile]{Ya tengo el \texttt{.bib}, ¿qué hago ahora?}
+
+Una vez tengan el \texttt{.bib} (supongamos que se llame
+\texttt{bibliography.bib}) en su archivo de latex del documento pueden agregar
+la bibliografía de la siguiente forma:
+
+\begin{lstlisting}[basicstyle=\tiny]
+\documentclass{article}
+\usepackage{cite}
+\bibliographystyle{plain} % Otros estilos: apalike, alpha, abbrv, etc
+
+\begin{document}
+
+Para referenciar un elemento de la usan el comando cite \cite{hu2016entangled}.
+
+\bibliography{bibliography}
+\end{document}
+\end{lstlisting}
+
+\end{frame}
+
+\subsection{Generales}
+\begin{frame}[fragile]{Generales}
+Junto con esta presentación se encuentra un documento de ejemplo que usa todo
+lo que se ha visto y además pueden ver otros temas como:
+
+\begin{itemize}
+  \item Configuración de tamaño de la hoja, márgenes, etc.
+  \item Idioma a usar en las secciones generadas de forma automática.
+  \item Muchos otros comandos y entornos.
+  \item Buenas prácticas al escribir el documento.
+\end{itemize}
+\end{frame}
