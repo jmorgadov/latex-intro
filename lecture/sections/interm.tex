@@ -12,7 +12,7 @@
 
 \subsection{Etiquetas}
 \begin{frame}[fragile]{Etiquetas}
-Las etiquetas permiten nombrar estructuras en \LaTeX para luego porder hacer
+  Las etiquetas permiten nombrar estructuras en \LaTeX{} para luego poer hacer
 referencias a ellas. Por ejemplo:
 
 \begin{lstlisting}[basicstyle=\tiny]
@@ -25,7 +25,7 @@ As mentioned in Section \ref{sec:main}, the principal ...
 \end{lstlisting}
 
 El comando \texttt{ref} se renderizará en el documento como el número de la
-sección que pasaron como parámetro. De esta forma pueden cambiar las secciones
+sección que se pase como parámetro. De esta forma pueden cambiar las secciones
 de orden, o agregar nuevas secciones sin preocupación de cambiar el número en
 todos los lugares donde hagan referencia a las mismas.
 
@@ -33,9 +33,9 @@ todos los lugares donde hagan referencia a las mismas.
 
 \subsection{Figuras}
 \begin{frame}[fragile]{Figuras}
-¿Y si queremos hacer referencia a una imágen? Para ello se usa el entorno
-\texttt{figure}. Dentro de este entorno no solo podemos agregar una etiqueta,
-sino también agregar un pie de figura:
+¿Y si queremos hacer referencia a una imagen? Para ello se usa el entorno
+\texttt{figure}. Dentro de este entorno también se puede agregar un pie de figura
+usando el comando \texttt{caption}:
 
 \begin{lstlisting}
 \begin{figure}
@@ -48,7 +48,7 @@ sino también agregar un pie de figura:
 \vspace{4mm}
 \pause
 
-\emph{De la misma forma el entrono \texttt{table} servirá para caracterizar tablas.}
+\emph{De la misma forma el entorno \texttt{table} servirá para caracterizar tablas.}
 
 \end{frame}
 
@@ -59,11 +59,12 @@ comunes es usando \emph{BibTeX}.\\[2mm]
 
 \pause
 
-Para ellos es necesario crear un archivo \texttt{.bib} el cual va a contener la
+Para ello es necesario crear un archivo \texttt{.bib} el cual va a contener la
 información de las citas que van a hacer en su trabajo:
 
 \begin{lstlisting}[basicstyle=\tiny]
-@article{hu2016entangled,
+@article{
+  hu2016entangled,
   title={Entangled active matter: From cells to ants},
   author={Hu, DL and Phonekeo, S and Altshuler, E and Brochard-Wyart, F},
   journal={The European Physical Journal Special Topics},
@@ -79,11 +80,11 @@ información de las citas que van a hacer en su trabajo:
 
 \begin{frame}{¿Cómo escribo el archivo \texttt{.bib}?}
 
-Muchos citios en internet permiten obtener la cita con el formato de
+Muchos sitios en internet permiten obtener la cita con el formato de
 BibTeX. Sin embargo, siempre pueden ir a Google Scholar y buscar el artículo
 (libro, etc) que van a usar como bibliografía. Cada resultado en Google
 Scholar tiene abajo la opción \texttt{Cite} y dentro de ella pueden obtener
-la cita en formato BibTex.\\[3mm]
+la cita en formato BibTeX.\\[3mm]
 
 Si aún así no encuentran la cita, pueden buscar los diferentes tipos de citas
 que se pueden usar en BibTeX y escribirla manualmente.
